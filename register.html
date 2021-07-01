@@ -1,0 +1,73 @@
+<html>
+    <head>
+
+        <link href="regstyle.css" rel="stylesheet"></link>
+        
+        <script type="text/javascript">
+            function Validation()
+            {
+            var emailID = document.myForm.EMail.value;
+            var num=document.myForm.number.value;
+            atpos = emailID.indexOf("@");
+            dotpos = emailID.lastIndexOf(".");
+            if (atpos< 1 || ( dotpos - atpos< 2 ))
+            {
+                alert("Please enter correct email ID")
+                document.myForm.EMail.focus() ;
+                return false;
+            }else if (isNaN(num)){
+                document.getElementById("ph");
+                alert("Please enter numeric only.")
+                return false;
+            }else{
+            
+                return true;
+            }
+            
+            }
+            </script>
+    </head>
+        <body>
+            
+            <div class="borderimg">
+                
+            <form  name="myForm" action="Register" method="POST" onsubmit="return Validation()">
+            
+                <div class="center"><br><br><br>
+                 <div id="mydiv">  <br><br>
+                    <div class="head">Register Here!</div><br>
+                 </div>
+                    <br><br><br><br><br>
+                <label class="label" for="Name" >Name:</label>
+                <input type="text" id="Name"    value=""
+                name="First Name" placeholder="Your First Name..." style="text-align: center;" required> <b style="color: red">*</b><br>
+<br><br>
+                
+                <label class="label" for="uname">Email id:</label>
+                <input type="text" id="EMail" value=""
+                name="Email id" placeholder="Email id..." required><b style="color: red">*</b><br>
+<br><br>
+
+<label class="label" for="Number">phone number:</label>
+                <input type="text" id="number" value=""
+                name="number" placeholder="Your Phone Number..." style="text-align: center;" required><b style="color: red">*</b><br>
+<br><br>
+                <label class="label" for="pwd">Password:</label>
+                <input type="password" id="pwd" value=""
+                name="Password" placeholder="Password..." required><b style="color: red">*</b><br>
+<br><br><br>
+
+<label class="label" for="pwd">Confirm Password:</label>
+                <input type="password" id="pwd" value=""
+                name="Password" placeholder="Confirm Password..." required><b style="color: red">*</b><br>
+<br><br><br>
+                <a href="loginform.html" class="button">Register</a>
+                <a href="loginform.html" class="button">Login</a>
+                
+                
+                </div>
+            </div>
+            </form>
+        </body>
+ 
+ 
